@@ -5,7 +5,7 @@ import {
   isValidMove,
   checkWin,
   isBoardFull,
-} from '../src/server/game/caroLogic.js';
+} from '../src/server/games/caro/caroLogic.js';
 
 describe('Caro Game Logic (30x30 Board)', () => {
   it('should initialize a 30x30 empty board', () => {

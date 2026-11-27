@@ -1,7 +1,7 @@
 import { randomBytes, randomUUID } from 'node:crypto';
 import type { Namespace } from 'socket.io';
-import { newXiangqiGame, playXiangqiMove } from '../../shared/threeXiangqi.js';
-import type { XiangqiClientEvents, XiangqiRoom, XiangqiServerEvents } from '../../shared/xiangqiRoom.js';
+import { newXiangqiGame, playXiangqiMove } from '../../../shared/xiangqi/threeXiangqi.js';
+import type { XiangqiClientEvents, XiangqiRoom, XiangqiServerEvents } from '../../../shared/xiangqi/xiangqiRoom.js';
 
 type Player = { name: string; token: string; socketId: string | null; timeout?: ReturnType<typeof setTimeout> };
 type Room = { code: string; players: Player[]; game: XiangqiRoom['game']; votes: Set<string> };

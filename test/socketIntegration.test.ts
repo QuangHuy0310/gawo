@@ -2,9 +2,9 @@ import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import { createServer, Server as HttpServer } from 'http';
 import { Server as SocketIOServer } from 'socket.io';
 import { io as ClientIO, Socket as ClientSocket } from 'socket.io-client';
-import { ClientToServerEvents, ServerToClientEvents, RoomState, ChatMessage } from '../src/shared/types.js';
-import { RoomManager } from '../src/server/game/roomManager.js';
-import { setupSocketHandlers } from '../src/server/socket/socketHandler.js';
+import { ClientToServerEvents, ServerToClientEvents, RoomState, ChatMessage } from '../src/shared/caro/types.js';
+import { RoomManager } from '../src/server/games/caro/roomManager.js';
+import { setupSocketHandlers } from '../src/server/games/caro/socketHandler.js';
 
 describe('Realtime Socket Flow Integration Test (30x30 Board & Random Turn Start & Chat)', () => {
   let httpServer: HttpServer;

@@ -7,7 +7,7 @@ import {
   ClientSession,
   ChatMessage,
 } from '../types.js';
-import { playTurnChime, flashTabTitle } from '../utils/sound.js';
+import { playTurnChime, flashTabTitle } from '../../../utils/sound.js';
 
 const SESSION_STORAGE_KEY = 'caro_session_data';
 const SOUND_STORAGE_KEY = 'caro_sound_enabled';

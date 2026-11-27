@@ -5,10 +5,10 @@ import cors from 'cors';
 import path from 'path';
 import fs from 'fs';
 import os from 'os';
-import { ClientToServerEvents, ServerToClientEvents } from '../shared/types.js';
-import { RoomManager } from './game/roomManager.js';
-import { setupSocketHandlers } from './socket/socketHandler.js';
-import { setupXiangqi } from './socket/xiangqiHandler.js';
+import { ClientToServerEvents, ServerToClientEvents } from '../shared/caro/types.js';
+import { RoomManager } from './games/caro/roomManager.js';
+import { setupSocketHandlers } from './games/caro/socketHandler.js';
+import { setupXiangqi } from './games/xiangqi/xiangqiHandler.js';
 
 const app = express();
 const server = createServer(app);

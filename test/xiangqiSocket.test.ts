@@ -3,8 +3,8 @@ import type { AddressInfo } from 'node:net';
 import { Server } from 'socket.io';
 import { io, type Socket } from 'socket.io-client';
 import { expect, it } from 'vitest';
-import { setupXiangqi } from '../src/server/socket/xiangqiHandler.js';
-import type { XiangqiClientEvents, XiangqiRoom, XiangqiServerEvents } from '../src/shared/xiangqiRoom.js';
+import { setupXiangqi } from '../src/server/games/xiangqi/xiangqiHandler.js';
+import type { XiangqiClientEvents, XiangqiRoom, XiangqiServerEvents } from '../src/shared/xiangqi/xiangqiRoom.js';
 
 type Client = Socket<XiangqiServerEvents, XiangqiClientEvents>;
 

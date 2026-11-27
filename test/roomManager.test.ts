@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { RoomManager } from '../src/server/game/roomManager.js';
+import { RoomManager } from '../src/server/games/caro/roomManager.js';
 
 describe('RoomManager Unit Tests (30x30 Board & Random Turn Start & Chat)', () => {
   it('should create a room for 3 players with 30x30 board properly', () => {

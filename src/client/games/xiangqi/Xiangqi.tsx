@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
+import './xiangqi.css';
 import type { FormEvent, MouseEvent } from 'react';
 import { io } from 'socket.io-client';
 import type { Socket } from 'socket.io-client';
-import { boardEdges, centerEntrances, givesXiangqiCheck, intersections, kingdoms, legalDestinations, newXiangqiGame, palaceDiagonals, pieceNames, playXiangqiMove, symbols } from '../../shared/threeXiangqi.js';
-import type { XiangqiGame } from '../../shared/threeXiangqi.js';
-import type { XiangqiClientEvents, XiangqiRoom, XiangqiServerEvents } from '../../shared/xiangqiRoom.js';
-import { playCheckChime, playPieceSound, playTurnChime, playWaitingTick, unlockGameAudio } from '../utils/sound.js';
+import { boardEdges, centerEntrances, givesXiangqiCheck, intersections, kingdoms, legalDestinations, newXiangqiGame, palaceDiagonals, pieceNames, playXiangqiMove, symbols } from '../../../shared/xiangqi/threeXiangqi.js';
+import type { XiangqiGame } from '../../../shared/xiangqi/threeXiangqi.js';
+import type { XiangqiClientEvents, XiangqiRoom, XiangqiServerEvents } from '../../../shared/xiangqi/xiangqiRoom.js';
+import { playCheckChime, playPieceSound, playTurnChime, playWaitingTick, unlockGameAudio } from '../../utils/sound.js';
 
 const storageKey = 'urgame-xiangqi-session';
 const soundKey = 'urgame-xiangqi-sound';

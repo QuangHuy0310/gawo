@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { legalDestinations, newXiangqiGame, playXiangqiMove } from '../src/shared/threeXiangqi.js';
+import { legalDestinations, newXiangqiGame, playXiangqiMove } from '../src/shared/xiangqi/threeXiangqi.js';
 
 describe('Cờ Tướng Tam Quốc', () => {
   it('starts with 16 pieces per side and enforces turn order and horse legs', () => {

@@ -89,36 +89,26 @@ Truy cập: **`http://localhost:3001`**
 ## 📁 Cấu Trúc Thư Mục
 
 ```
-test1/
+urgame/
 ├── src/
 │   ├── shared/
-│   │   └── types.ts             # Kiểu dữ liệu dùng chung (RoomState, Move, Player, SocketEvents)
+│   │   ├── caro/                # Kiểu dữ liệu và sự kiện Caro
+│   │   └── xiangqi/             # Luật bàn cờ và kiểu dữ liệu Cờ Tướng Tam Quốc
 │   ├── server/
-│   │   ├── index.ts             # Khởi tạo Express, HTTP Server & Socket.IO
-│   │   ├── game/
-│   │   │   ├── constants.ts     # Cấu hình hằng số (kích thước bàn cờ 30x30, số quân thắng, timeout)
-│   │   │   ├── caroLogic.ts     # Thuật toán kiểm tra thắng 5 con theo 4 hướng, ô hợp lệ trên 30x30
-│   │   │   └── roomManager.ts   # Quản lý vòng đời phòng, xoay lượt, random người đi đầu, tái kết nối
-│   │   └── socket/
-│   │       └── socketHandler.ts # Xử lý các sự kiện Socket.IO thời gian thực
+│   │   ├── index.ts             # Khởi tạo Express và Socket.IO
+│   │   └── games/
+│   │       ├── caro/            # Luật, quản lý phòng và socket Caro
+│   │       └── xiangqi/         # Quản lý phòng và socket Cờ Tướng Tam Quốc
 │   └── client/
-│       ├── index.html           # File HTML giao diện
 │       ├── main.tsx             # Entry point React
-│       ├── App.tsx              # Điều phối màn hình chính (Lobby, Phòng chờ, Bàn cờ 30x30)
-│       ├── index.css            # Style bàn cờ 30x30, hiệu ứng phát sáng, responsive 390px, 768px, 1440px
-│       ├── types.ts             # Export types cho client
-│       ├── hooks/
-│       │   └── useSocket.ts     # Custom hook quản lý Socket.IO và tự động kết nối lại
-│       └── components/
-│           ├── Lobby.tsx        # Tạo phòng (chọn 3/4 người) và nhập mã tham gia
-│           ├── WaitingRoom.tsx  # Danh sách slot, copy mã phòng, nút sẵn sàng và bắt đầu
-│           ├── GameBoard.tsx    # Bàn cờ 30x30 (900 ô), nhãn A-Z & AA-AD, auto-center, zoom controls
-│           ├── PlayerCard.tsx   # Thẻ trạng thái người chơi, lượt hiện tại, cảnh báo offline
-│           └── GameOverModal.tsx# Thông báo thắng/thua/hòa/hủy ván, bắn pháo hoa, xin chơi lại
+│       ├── App.tsx              # Điều hướng giữa trang chủ và các game
+│       ├── Home.tsx             # Danh sách game
+│       ├── index.css            # Kiểu giao diện chung
+│       └── games/
+│           ├── caro/            # Sảnh, bàn cờ, kết nối và CSS của Caro
+│           └── xiangqi/         # Sảnh, bàn cờ và CSS của Cờ Tướng Tam Quốc
 ├── test/
-│   ├── caroLogic.test.ts        # Unit test thuật toán kiểm tra thắng, biên [29,29], góc 30x30
-│   ├── roomManager.test.ts      # Unit test quy tắc xoay lượt, random turn start, giới hạn phòng
-│   └── socketIntegration.test.ts# Integration test kiểm tra luồng Socket.IO thực tế
+│   └── ...                      # Kiểm thử luật và luồng Socket.IO của hai game
 ├── package.json
 ├── tsconfig.json
 ├── tsconfig.server.json

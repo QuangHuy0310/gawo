@@ -6,7 +6,7 @@ import {
   ChatMessage,
   PLAYER_CONFIGS,
   Move,
-} from '../../shared/types.js';
+} from '../../../shared/caro/types.js';
 import { BOARD_SIZE, DISCONNECT_TIMEOUT_SECONDS } from './constants.js';
 import { createEmptyBoard, isValidMove, checkWin, isBoardFull } from './caroLogic.js';
 

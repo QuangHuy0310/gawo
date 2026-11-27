@@ -3,8 +3,8 @@ import {
   ClientToServerEvents,
   ServerToClientEvents,
   RoomState,
-} from '../../shared/types.js';
-import { RoomManager } from '../game/roomManager.js';
+} from '../../../shared/caro/types.js';
+import { RoomManager } from './roomManager.js';
 
 export function setupSocketHandlers(
   io: Server<ClientToServerEvents, ServerToClientEvents>,
